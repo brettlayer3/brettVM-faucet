@@ -326,7 +326,7 @@ function App() {
                 // "textAlign": "left"
               }}>
                 Ensure you have some test ETH. Visit
-                <a href="https://www.alchemy.com/faucets/base-sepolia" target="blank"> here </a>
+                <a href="https://faucet.quicknode.com/drip" target="blank"> here </a>
                 to receive some.
                 <br/>
                 <br/>
