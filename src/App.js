@@ -351,6 +351,8 @@ function App() {
                 Click<a href="https://brettvm-testnet-3o1ozdql67-6aac6993b9bfa2bd.testnets.rollbridge.app" target="blank"> here </a>
                 or the bridge to transfer to BrettVM Testnet.
                 <br/>
+                <b>*Bridge less than MAX amount of BRETT*</b>
+                <br/>
                 <a href="https://brettvm-testnet-3o1ozdql67-6aac6993b9bfa2bd.testnets.rollbridge.app" target="blank">
                   <img src={bridgePixel} width={48} alt="bridge" />
                 </a>
