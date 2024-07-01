@@ -317,18 +317,18 @@ const { data: callsStatus } = useCallsStatus({
     }
   };
 
-  const getOCTHandler = async () => {
-    setWithdrawError("");
-    setWithdrawSuccess("");
-    try {
-      const fcContractWithSigner = fcContract.connect(signer);
-      const resp = await fcContractWithSigner.requestTokens();
-      setWithdrawSuccess("Enjoy your BRETT!");
-      setTransactionData(resp.hash);
-    } catch (err) {
-      setWithdrawError(err.message);
-    }
-  };
+  // const getOCTHandler = async () => {
+  //   setWithdrawError("");
+  //   setWithdrawSuccess("");
+  //   try {
+  //     const fcContractWithSigner = fcContract.connect(signer);
+  //     const resp = await fcContractWithSigner.requestTokens();
+  //     setWithdrawSuccess("Enjoy your BRETT!");
+  //     setTransactionData(resp.hash);
+  //   } catch (err) {
+  //     setWithdrawError(err.message);
+  //   }
+  // };
   // account: `0x${account.address.slice(2)}`,
   
   async function requestTokens() {

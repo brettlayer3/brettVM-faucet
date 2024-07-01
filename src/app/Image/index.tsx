@@ -47,7 +47,7 @@ const Image = ({ src, width = undefined, height = undefined, layout = undefined,
           {...rest}        />
       ) : (
         <NextImage
-          loader={loader}
+          alt={''} loader={loader}
           src={src}
           width={width}
           height={height}
