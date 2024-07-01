@@ -1,7 +1,7 @@
 'use client'
 
-// import { wagmiConfig } from '@/wagmi'
 import { useEffect, useState } from "react";
+// import { wagmiConfig } from '@/wagmi'
 // import "./App.css";
 // import { ethers } from "ethers";
 import faucetContract from "../ethereum/faucet";
