@@ -37,15 +37,14 @@ const Image = ({ src, width = undefined, height = undefined, layout = undefined,
     <div style={{ width, height }} className="">
       {useBlur ? (
         <NextImage
-          loader={loader}
+          alt={''} loader={loader}
           src={src}
           width={width}
           height={height}
           layout={layout}
           placeholder="blur"
           blurDataURL={`data:image/svg+xml;base64,${toBase64(shimmer(width, height))}`}
-          {...rest}
-        />
+          {...rest}        />
       ) : (
         <NextImage
           loader={loader}
