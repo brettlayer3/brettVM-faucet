@@ -1,6 +1,6 @@
 @font-face {
   font-family: "ms sans serif";
-  src: url(/src/fonts/ms-sans-serif.ttf) format("truetype");
+  src: url(../fonts/ms-sans-serif.ttf) format("truetype");
 }
 
 body {
@@ -16,6 +16,15 @@ body {
 /* Windows effect start*/
 .window-button, .window-wrap, .button, .submit-button, .button-bar, .home-button {
 	box-shadow: inset -1px -1px #0a0a0a, inset 1px 1px #fff, inset -2px -2px grey, inset 2px 2px #dfdfdf;
+}
+
+a {
+  color: blue !important;
+}
+
+a:hover {
+  color: blue !important;
+  text-decoration: underline;
 }
 
 .window-header {
@@ -53,7 +62,10 @@ body {
   font-family: Arial, Helvetica, sans-serif;
   /* margin: 1rem; */
   overflow-wrap: anywhere;
-
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .window-button {
@@ -93,11 +105,12 @@ img {
 }
 
 input {
-  width: 80% !important;
+  width: 24rem !important;
   height: 2rem;
   border-radius: 0px !important;
-  margin: 2rem;
-  padding: 1rem;
+  margin: 2rem !important;;
+  padding: 1rem !important;;
+  color: black !important;;
   /* font-family: 'ms sans serif'; */
   font-size: 1rem;
 }
@@ -186,6 +199,14 @@ input {
   color: black;
   /* font-weight: bold; */
   font-family: Arial, sans-serif;
+  
+}
+
+.centered {
+  align-items: center;
+  justify-content: center;
+  color: #000000;
+  background-color: #000000;
   
 }
 
