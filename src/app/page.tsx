@@ -3,7 +3,7 @@
 // import { wagmiConfig } from '@/wagmi'
 import { useEffect, useState } from "react";
 // import "./App.css";
-import { ethers } from "ethers";
+// import { ethers } from "ethers";
 import faucetContract from "../ethereum/faucet";
 // eslint-disable-next-line
 import React, { Component } from 'react'
@@ -213,95 +213,95 @@ const { data: callsStatus } = useCallsStatus({
   ];
 
   useEffect(() => {
-    getCurrentWalletConnected();
-    addWalletListener();
+    // getCurrentWalletConnected();
+    // addWalletListener();
     accountUpdated();
   }, [walletAddress]);
 
   console.log(account.status)
   
-  const connectWallet = async () => {
-    // eslint-disable-next-line
-    if (typeof window != "undefined" && typeof window.ethereum != "undefined") {
-      try {
-        /* get provider */
-        const provider = new ethers.providers.Web3Provider(window.ethereum);
-        /* get accounts */
-        const accounts = await provider.send("eth_requestAccounts", []);
-        /* get signer */
-        setSigner(provider.getSigner());
-        /* local contract instance */
-        setFcContract(faucetContract(provider));
-        /* set active wallet address */
-        setWalletAddress(accounts[0]);
+  // const connectWallet = async () => {
+  //   // eslint-disable-next-line
+  //   if (typeof window != "undefined" && typeof window.ethereum != "undefined") {
+  //     try {
+  //       /* get provider */
+  //       const provider = new ethers.providers.Web3Provider(window.ethereum);
+  //       /* get accounts */
+  //       const accounts = await provider.send("eth_requestAccounts", []);
+  //       /* get signer */
+  //       setSigner(provider.getSigner());
+  //       /* local contract instance */
+  //       setFcContract(faucetContract(provider));
+  //       /* set active wallet address */
+  //       setWalletAddress(accounts[0]);
 
-        // // Create provider
-        // const provider = sdk.makeWeb3Provider({options: 'all'});
-        // // Use provider
-        // const accounts = await provider.request({method: 'eth_requestAccounts'});
-        // console.log(accounts)
-        // // /* get signer */
-        // setSigner(provider.request({method: 'personal_sign'}));
-        // // /* local contract instance */
-        // setFcContract(faucetContract(provider));
-        // // /* set active wallet address */
-        // setWalletAddress(accounts[0]);
+  //       // // Create provider
+  //       // const provider = sdk.makeWeb3Provider({options: 'all'});
+  //       // // Use provider
+  //       // const accounts = await provider.request({method: 'eth_requestAccounts'});
+  //       // console.log(accounts)
+  //       // // /* get signer */
+  //       // setSigner(provider.request({method: 'personal_sign'}));
+  //       // // /* local contract instance */
+  //       // setFcContract(faucetContract(provider));
+  //       // // /* set active wallet address */
+  //       // setWalletAddress(accounts[0]);
 
-        navigator.clipboard.writeText(walletAddress)
-        .then(() => {
-          console.log(walletAddress);
-        })
-        .catch(err => {
-          console.error('Failed to copy text:', err);
-        });
-      } catch (err) {
-        console.error(err.message);
-      }
-    } else {
-      /* MetaMask is not installed */
-      console.log("Please install MetaMask");
-    }
-  };
+  //       navigator.clipboard.writeText(walletAddress)
+  //       .then(() => {
+  //         console.log(walletAddress);
+  //       })
+  //       .catch(err => {
+  //         console.error('Failed to copy text:', err);
+  //       });
+  //     } catch (err) {
+  //       console.error(err.message);
+  //     }
+  //   } else {
+  //     /* MetaMask is not installed */
+  //     console.log("Please install MetaMask");
+  //   }
+  // };
 
-  const getCurrentWalletConnected = async () => {
-    // eslint-disable-next-line
-    if (typeof window != "undefined" && typeof window.ethereum != "undefined") {
-      try {
-        /* get provider */
-        const provider = new ethers.providers.Web3Provider(window.ethereum);
-        /* get accounts */
-        const accounts = await provider.send("eth_accounts", []);
-        if (accounts.length > 0) {
-          /* get signer */
-          setSigner(provider.getSigner());
-          /* local contract instance */
-          setFcContract(faucetContract(provider));
-          /* set active wallet address */
-          setWalletAddress(accounts[0]);
-        } else {
-          console.log("Connect to MetaMask using the Connect Wallet button");
-        }
-      } catch (err) {
-        console.error(err.message);
-      }
-    } else {
-      /* MetaMask is not installed */
-      console.log("Please install MetaMask");
-    }
-  };
+  // const getCurrentWalletConnected = async () => {
+  //   // eslint-disable-next-line
+  //   if (typeof window != "undefined" && typeof window.ethereum != "undefined") {
+  //     try {
+  //       /* get provider */
+  //       const provider = new ethers.providers.Web3Provider(window.ethereum);
+  //       /* get accounts */
+  //       const accounts = await provider.send("eth_accounts", []);
+  //       if (accounts.length > 0) {
+  //         /* get signer */
+  //         setSigner(provider.getSigner());
+  //         /* local contract instance */
+  //         setFcContract(faucetContract(provider));
+  //         /* set active wallet address */
+  //         setWalletAddress(accounts[0]);
+  //       } else {
+  //         console.log("Connect to MetaMask using the Connect Wallet button");
+  //       }
+  //     } catch (err) {
+  //       console.error(err.message);
+  //     }
+  //   } else {
+  //     /* MetaMask is not installed */
+  //     console.log("Please install MetaMask");
+  //   }
+  // };
 
-  const addWalletListener = async () => {
-    // eslint-disable-next-line
-    if (typeof window != "undefined" && typeof window.ethereum != "undefined") {
-      window.ethereum.on("accountsChanged", (accounts) => {
-        setWalletAddress(accounts[0]);
-      });
-    } else {
-      /* MetaMask is not installed */
-      setWalletAddress("");
-      console.log("Please install MetaMask");
-    }
-  };
+  // const addWalletListener = async () => {
+  //   // eslint-disable-next-line
+  //   if (typeof window != "undefined" && typeof window.ethereum != "undefined") {
+  //     window.ethereum.on("accountsChanged", (accounts) => {
+  //       setWalletAddress(accounts[0]);
+  //     });
+  //   } else {
+  //     /* MetaMask is not installed */
+  //     setWalletAddress("");
+  //     console.log("Please install MetaMask");
+  //   }
+  // };
 
   const accountUpdated = async () => {
     // eslint-disable-next-line
